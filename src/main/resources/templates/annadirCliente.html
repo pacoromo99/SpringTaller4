@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SISTEMA EVERIS</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="card-body">
+	<form th:action="@{/annadirCliente}" th:object="${annadirCliente}"
+		 method="POST">
+		<div class="form-group">
+			<label for="inpClienteNombre">Nombre</label> <input type="text"
+				required="required" class="form-control" id="inpTnombre"
+				name="nombre" placeholder="Nombre del cliente.">
+		</div>
+		<div class="form-group">
+			<label for="inpClienteApellidos">Apellidos</label> <input type="text"
+				required="required" class="form-control" id="inpTapellidos"
+				name="apellidos" placeholder="Apellidos.">
+		</div>
+		<div class="form-group">
+			<label for="inpClienteFecha">Fecha nacimiento</label> <input
+				required="required" type="date" class="form-control" id="inpTfecha"
+				name="fecha" placeholder="Fecha nacimiento.">
+		</div>
+		<div class="form-group">
+			<label for="inpClienteDniNumber">DNI</label> <input
+				required="required" type="text" class="form-control" id="inpTdni"
+				name="dni" placeholder="D.N.I.">
+		</div>
+		<button type="submit" name="btnSearchCustomerBy"class="btn btn-success" inputmode="text">Añadir</button>
+		<a class="btn btn-primary" href="clientes" id="aBtnReturn"  role="button">Volver</a>
+		
+	</form>
+</body>
+</html>

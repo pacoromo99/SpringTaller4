@@ -10,17 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.nttdata.Spring.Taller4.Entidades.Cliente;
 import com.nttdata.Spring.Taller4.Servicios.ClienteServicios;
 
-@SpringBootApplication(scanBasePackages={
-		"com.nttdata.Spring.Taller4.Controladores", "com.nttdata.Spring.Taller4.Entidades","com.nttdata.Spring.Taller4.Repository","com.nttdata.Spring.Taller4.Servicios"})
+@SpringBootApplication
 public class SpringTaller4Application  implements CommandLineRunner {
 
-	@Autowired(required=true)
+	@Autowired
 	ClienteServicios cliente;
-
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringTaller4Application.class, args);
-		
 	}
 	@Override
 	public void run(String... args) throws Exception {
@@ -41,7 +38,5 @@ public class SpringTaller4Application  implements CommandLineRunner {
 		buscarTodos = cliente.buscarTodos();
 		System.out.println("\nTODOS\n");
 		buscarTodos.stream().forEach(cliente-> System.out.println(cliente.toString()));
-		
 	}
-
 }

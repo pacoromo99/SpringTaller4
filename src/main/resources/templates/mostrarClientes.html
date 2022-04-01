@@ -32,7 +32,7 @@
 							<td scope="row" th:text="${cliente.fecha}" />
 							<td scope="row" th:text="${cliente.dni}" />
 							<td scope="row" th:hidden="${showClienteViewDropInd}">
-								<form action="actDropCliente" method="post">
+								<form action="eliminarCliente" method="post">
 									<button th:disabled="${btnDropClienteEnabled}" type="submit"
 										id="btnDropCliente" name="clienteId"
 										th:value="${cliente.id}" class="btn btn-danger">▼</button>
@@ -42,8 +42,8 @@
 					</th:block>
 				</tbody>
 			</table>
-			<a class="btn btn-primary" th:href="@{index}" id="aBtnReturn"
-				role="button">Volver</a>
+			<a class="btn btn-success" th:href="annadirCliente" id="aBtnReturn" role="button">Añadir</a>
+			
 		</div>
 	</div>
 </body>
